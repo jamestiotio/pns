@@ -19,3 +19,6 @@ This repository houses the code scripts, as well as the datasets that we utilize
 - IEEE dataset obtained from [this research paper](https://ieeexplore.ieee.org/document/6862882).
 - Top 100 most valuable GitHub repositories list obtained from [this article](https://hackernoon.com/githubs-top-100-most-valuable-repositories-out-of-96-million-bb48caa9eb0b).
 - Kaggle housing prices dataset obtained from either [here](https://www.kaggle.com/c/home-data-for-ml-course/data) or [here](https://www.kaggle.com/c/house-prices-advanced-regression-techniques/data) (they have the same training dataset).
+- India's graduate admissions dataset obtained from [here](https://www.kaggle.com/mohansacharya/graduate-admissions/data).
+- Financial indicators of US stocks (2018) dataset obtained from [here](https://www.kaggle.com/cnic92/200-financial-indicators-of-us-stocks-20142018/data).
+- Pokemon dataset obtained from [here](https://www.kaggle.com/mariotormo/complete-pokemon-dataset-updated-090420/data).

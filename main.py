@@ -14,6 +14,7 @@ THRESHOLD = 0.7
 SELECTED_DATASET = ""
 
 # This algorithm is general (should fit any dataset of choice)
+# This implementation will print exactly twice as many desired tri-correlation relationships as we want (duplicates at upper triangle and lower triangle of the matrix), but we don't really care since we can pick, choose and sieve out manually by ourselves for the sake of this project
 def main():
     df = pd.read_csv(SELECTED_DATASET)
     corr = df.corr(method="pearson")

@@ -22,3 +22,4 @@ This repository houses the code scripts, as well as the datasets that we utilize
 - India's graduate admissions dataset obtained from [here](https://www.kaggle.com/mohansacharya/graduate-admissions/data).
 - Financial indicators of US stocks (2018) dataset obtained from [here](https://www.kaggle.com/cnic92/200-financial-indicators-of-us-stocks-20142018/data).
 - Pokemon dataset obtained from [here](https://www.kaggle.com/mariotormo/complete-pokemon-dataset-updated-090420/data).
+- Latest worldwide COVID-19 per-country statistics (retrieved on 11 March 2021) provided by Our World in Data [here](https://github.com/owid/covid-19-data/tree/master/public/data).

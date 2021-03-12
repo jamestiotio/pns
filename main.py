@@ -22,6 +22,7 @@ def main():
         "-f",
         "--file",
         "--dataset",
+        "--csv",
         type=str,
         nargs=1,
         help="the CSV dataset input file to be processed",

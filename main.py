@@ -36,11 +36,23 @@ def main():
         const=0.7,
         default=0.7,
         help="the threshold for the correlation coefficient strength to be considered/taken into account",
+        required=False
+    )
+    parser.add_argument(
+        "-o",
+        "--output",
+        type=str,
+        nargs=1,
+        default=None,
+        help="the base non-indexed output image filename to save the correlation matrix plot(s) to",
+        required=False
     )
     args = vars(parser.parse_args())
 
     # The stronger the correlation, the better and more convincing the results are/will be
     THRESHOLD = args["threshold"]
+
+    file_idx = 0
 
     # Start algorithm
     SELECTED_DATASET = args["file"][0]
@@ -83,7 +95,18 @@ def main():
                             xticklabels=corr.columns.values,
                             yticklabels=corr.columns.values,
                         )
-                        plt.show()
+
+                        # Decide whether to display/show image plot to screen or save image plot to file
+                        if args["output"] is None:
+                            plt.show()
+                        else:
+                            filename = args["output"][0].rpartition(".")
+                            plt.savefig(filename[0] + str(file_idx) + "." + filename[2], bbox_inches="tight")
+                            file_idx += 1
+
+                        # Reset and clear the plot
+                        plt.clf()
+
                         # Reset mask matrix
                         mask[i_idx, k_idx], mask[k_idx, j_idx], mask[i_idx, j_idx] = (
                             True,

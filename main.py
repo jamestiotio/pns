@@ -36,7 +36,7 @@ def main():
         const=0.7,
         default=0.7,
         help="the threshold for the correlation coefficient strength to be considered/taken into account",
-        required=False
+        required=False,
     )
     parser.add_argument(
         "-o",
@@ -45,7 +45,7 @@ def main():
         nargs=1,
         default=None,
         help="the base non-indexed output image filename to save the correlation matrix plot(s) to",
-        required=False
+        required=False,
     )
     args = vars(parser.parse_args())
 
@@ -55,8 +55,24 @@ def main():
     file_idx = 0
 
     # Check validity of output filename
-    if args["output"] is not None and args["output"][0].rpartition(".")[2] not in ["eps", "jpeg", "jpg", "pdf", "pgf", "png", "ps", "raw", "rgba", "svg", "svgz", "tif", "tiff"]:
-        print("Please enter a filename with a supported format! Supported formats: eps, jpeg, jpg, pdf, pgf, png, ps, raw, rgba, svg, svgz, tif, tiff. Quitting...")
+    if args["output"] is not None and args["output"][0].rpartition(".")[2] not in [
+        "eps",
+        "jpeg",
+        "jpg",
+        "pdf",
+        "pgf",
+        "png",
+        "ps",
+        "raw",
+        "rgba",
+        "svg",
+        "svgz",
+        "tif",
+        "tiff",
+    ]:
+        print(
+            "Please enter a filename with a supported format! Supported formats: eps, jpeg, jpg, pdf, pgf, png, ps, raw, rgba, svg, svgz, tif, tiff. Quitting..."
+        )
         exit(1)
 
     # Start algorithm
@@ -106,7 +122,10 @@ def main():
                             plt.show()
                         else:
                             filename = args["output"][0].rpartition(".")
-                            plt.savefig(filename[0] + str(file_idx) + "." + filename[2], bbox_inches="tight")
+                            plt.savefig(
+                                filename[0] + str(file_idx) + "." + filename[2],
+                                bbox_inches="tight",
+                            )
                             file_idx += 1
 
                         # Reset and clear the plot

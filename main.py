@@ -54,6 +54,11 @@ def main():
 
     file_idx = 0
 
+    # Check validity of output filename
+    if args["output"] is not None and args["output"][0].rpartition(".")[2] not in ["eps", "jpeg", "jpg", "pdf", "pgf", "png", "ps", "raw", "rgba", "svg", "svgz", "tif", "tiff"]:
+        print("Please enter a filename with a supported format! Supported formats: eps, jpeg, jpg, pdf, pgf, png, ps, raw, rgba, svg, svgz, tif, tiff. Quitting...")
+        exit(1)
+
     # Start algorithm
     SELECTED_DATASET = args["file"][0]
     df = pd.read_csv(SELECTED_DATASET)

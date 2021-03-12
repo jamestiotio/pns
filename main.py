@@ -7,15 +7,41 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
+import argparse
 
-# The stronger the correlation, the better and more convincing the results are/will be
-THRESHOLD = 0.7
 
-SELECTED_DATASET = ""
-
-# This algorithm is general (should fit any dataset of choice)
+# This algorithm is general (should fit any CSV dataset of choice)
 # This implementation will print exactly twice as many desired tri-correlation relationships as we want (duplicates at upper triangle and lower triangle of the matrix), but we don't really care since we can pick, choose and sieve out manually by ourselves for the sake of this project
 def main():
+    # Initialize argument parser
+    parser = argparse.ArgumentParser(
+        description="Conveniently select appropriate/relevant triplets of random variables to prove the non-transitivity property of Pearson's correlation coefficient."
+    )
+    parser.add_argument(
+        "-f",
+        "--file",
+        "--dataset",
+        type=str,
+        nargs=1,
+        help="the CSV dataset input file to be processed",
+        required=True,
+    )
+    parser.add_argument(
+        "-t",
+        "--threshold",
+        type=float,
+        nargs="?",
+        const=0.7,
+        default=0.7,
+        help="the threshold for the correlation coefficient strength to be considered/taken into account",
+    )
+    args = vars(parser.parse_args())
+
+    # The stronger the correlation, the better and more convincing the results are/will be
+    THRESHOLD = args["threshold"]
+
+    # Start algorithm
+    SELECTED_DATASET = args["file"][0]
     df = pd.read_csv(SELECTED_DATASET)
     corr = df.corr(method="pearson")
     mask = np.ones_like(corr)

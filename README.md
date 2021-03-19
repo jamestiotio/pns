@@ -14,6 +14,30 @@ Team Members:
 
 This repository houses the code scripts, as well as the datasets that we utilized in this short research as we attempt to find a real-world/real-life example/sample to showcase the non-transitivity property of Pearson's correlation coefficient between 3 random variables.
 
+## Usage
+
+These are the available flags and options:
+
+```console
+$ python3 main.py --help
+Usage: main.py [-h] -f FILE [-t [THRESHOLD]] [-o OUTPUT]
+
+Conveniently select appropriate/relevant triplets of random variables to prove
+the non-transitivity property of Pearson's correlation coefficient.
+
+Options:
+  -h, --help            show this help message and exit
+  -f FILE, --file FILE, --dataset FILE, --csv FILE
+                        the CSV dataset input file to be processed (default:
+                        None)
+  -t [THRESHOLD], --threshold [THRESHOLD]
+                        the threshold for the correlation coefficient strength
+                        to be considered/taken into account (default: 0.7)
+  -o OUTPUT, --output OUTPUT
+                        the base non-indexed output image filename to save the
+                        correlation matrix plot(s) to (default: None)
+```
+
 ## Acknowledgements
 
 - IEEE dataset obtained from [this research paper](https://ieeexplore.ieee.org/document/6862882).

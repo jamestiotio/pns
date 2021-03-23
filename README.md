@@ -22,8 +22,9 @@ These are the available flags and options:
 $ python3 main.py --help
 Usage: main.py [-h] -f FILE [-t [THRESHOLD]] [-o OUTPUT]
 
-Conveniently select appropriate/relevant triplets of random variables to prove
-the non-transitivity property of Pearson's correlation coefficient.
+Conveniently select appropriate/relevant triplets of random variables to
+demonstrate the non-transitivity property of Pearson's correlation
+coefficient.
 
 Options:
   -h, --help            show this help message and exit

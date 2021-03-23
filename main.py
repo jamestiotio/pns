@@ -15,7 +15,7 @@ import argparse
 def main():
     # Initialize argument parser
     parser = argparse.ArgumentParser(
-        description="Conveniently select appropriate/relevant triplets of random variables to prove the non-transitivity property of Pearson's correlation coefficient.",
+        description="Conveniently select appropriate/relevant triplets of random variables to demonstrate the non-transitivity property of Pearson's correlation coefficient.",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
     parser.add_argument(

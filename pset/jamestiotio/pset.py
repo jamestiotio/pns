@@ -114,6 +114,7 @@ beta_covid = gamma.mean(a=new_alpha, loc=0, scale=1/new_beta)
 # %%
 # Question 2e
 x = np.linspace(0, 10, 10000)
+# for i in np.arange(0.5, 101.5, 1):
 for i in np.arange(0.01, 4.01, 0.01):
     alpha = 2 + (len(observed_g_values) * (1764 / 95))
     beta = i + np.sum(observed_g_values)

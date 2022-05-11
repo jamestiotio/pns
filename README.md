@@ -1,4 +1,4 @@
-# SUTD ISTD 2021 50.034 Introduction to Probability and Statistics 1D Project
+# SUTD ISTD 2021 50.034 Introduction to Probability & Statistics 1D Project
 
 Topic: Non-Transitivity Property of Pearson's Correlation Coefficient
 
